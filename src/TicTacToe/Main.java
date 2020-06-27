@@ -40,12 +40,10 @@ public class Main {
     public static void printField(char[][] gameField){
 
         System.out.println("---------");
-        // Iterates i and j, accessing all the elements from matrix and printing it.
-        for (int i = 0; i < gameField.length; ++i) {
+        // 
+        for (char[] chars : gameField) {
             System.out.print("| ");
-            for (int j = 0; j < gameField[0].length; ++j){
-                System.out.print(gameField[i][j] + " ");
-            }
+            IntStream.range(0, gameField[0].length).mapToObj(j -> chars[j] + " ").forEachOrdered(System.out::print);
             System.out.print("|");
             System.out.println();
         }
